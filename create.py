@@ -30,9 +30,9 @@ if __name__ == "__main__":
 
     # clone repo and set upstream
     if args['path'] is None:
-        repoClone = pygit2.clone_repository(repo.git_url, "./" + args['name'])
+        repoClone = pygit2.clone_repository(repo.git_url, "." + os.sep + args['name'])
     else:
-        repoClone = pygit2.clone_repository(repo.git_url, args['path'] + "/" + args['name'])
+        repoClone = pygit2.clone_repository(repo.git_url, args['path'] + os.sep + args['name'])
   
     repoClone.remotes.set_url("origin", repo.ssh_url)
     repoClone.remotes.set_push_url("origin", repo.ssh_url)
